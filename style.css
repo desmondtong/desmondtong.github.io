@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  background: url("../Assets/start-menu.png");
+  background: url("Assets/start-menu.png");
   background-color: var(--pastel-brown);
   background-size: cover;
   width: 100%;

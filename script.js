@@ -46,16 +46,16 @@ const stat = {
   p2Stat: document.querySelector("#p2-stat"),
 };
 
-const clickSound = new Audio("../Assets/click2.mp3");
-const destroyTowerSound = new Audio("../Assets/destroy-tower-short.mp3");
-const getItemSound = new Audio("../Assets/get-item.mp3");
-const healSound = new Audio("../Assets/heal-dice.mp3");
-const healSound2 = new Audio("../Assets/heal-dice-2.wav");
-const swapSound = new Audio("../Assets/swap-dice.mp3");
-const swapSound2 = new Audio("../Assets/swap-dice-2.mp3");
-const shieldSound = new Audio("../Assets/shield-dice.mp3");
-const ricoSound = new Audio("../Assets/ricochet-dice.mp3");
-const gameBgm = new Audio("../Assets/game-music.mp3");
+const clickSound = new Audio("Assets/click2.mp3");
+const destroyTowerSound = new Audio("Assets/destroy-tower-short.mp3");
+const getItemSound = new Audio("Assets/get-item.mp3");
+const healSound = new Audio("Assets/heal-dice.mp3");
+const healSound2 = new Audio("Assets/heal-dice-2.wav");
+const swapSound = new Audio("Assets/swap-dice.mp3");
+const swapSound2 = new Audio("Assets/swap-dice-2.mp3");
+const shieldSound = new Audio("Assets/shield-dice.mp3");
+const ricoSound = new Audio("Assets/ricochet-dice.mp3");
+const gameBgm = new Audio("Assets/game-music.mp3");
 
 // Initialize variables
 const timeEachRound = 10;
@@ -121,7 +121,7 @@ function generateTower(maxHP) {
   let content = [];
   for (let i = 0; i < maxHP; i++) {
     content.push(
-      `<img src="../Assets/dice/dice-${Math.ceil(
+      `<img src="Assets/dice/dice-${Math.ceil(
         Math.random() * 6
       )}.png" class="dice-png" />`
     );
@@ -132,9 +132,9 @@ function generateTower(maxHP) {
 function generateCannonDice(player) {
   cannonDice[0] = Math.ceil(Math.random() * 6);
   cannonDice[1] = Math.ceil(Math.random() * 6);
-  return `<img src="../Assets/brown dice/${cannonDice[0]}.png" class="brown-dice-png" />
+  return `<img src="Assets/brown dice/${cannonDice[0]}.png" class="brown-dice-png" />
       <p class="cannon-dice">X</p>
-      <img src="../Assets/brown dice/${cannonDice[1]}.png" class="brown-dice-png" />
+      <img src="Assets/brown dice/${cannonDice[1]}.png" class="brown-dice-png" />
       <p class="cannon-dice">=</p>
       <p class="cannon-dice" id="p${player}-shots">?</p>`;
 }
@@ -299,7 +299,7 @@ function powerDice() {
     case 1: // shield dice
       towers[`p${currPlayer}Tower`].classList.add("shield");
       stat[`p${currPlayer}Stat`].innerHTML = `<div><img
-      src="../Assets/power-dice/shield-dice.png"
+      src="Assets/power-dice/shield-dice.png"
       class="power-dice-icon"
     /></div>`;
       getItemSound.play();
@@ -309,7 +309,7 @@ function powerDice() {
       // add rico class to opponent
       towers[`p${currPlayer === 1 ? 2 : 1}Tower`].classList.add("ricochet");
       stat[`p${currPlayer}Stat`].innerHTML = `<div><img
-      src="../Assets/power-dice/ricochet-dice.png"
+      src="Assets/power-dice/ricochet-dice.png"
       class="power-dice-icon"
     /></div>`;
       getItemSound.play();
@@ -481,7 +481,7 @@ for (const btn of exitBtn) {
     if (e.target.tagName !== "BUTTON") return;
 
     startMenu.classList.remove("hidden");
-    body.style.background = "url('../Assets/start-menu.png')";
+    body.style.background = "url('Assets/start-menu.png')";
     body.style.backgroundSize = "cover";
 
     gameScreen.classList.add("hidden");
