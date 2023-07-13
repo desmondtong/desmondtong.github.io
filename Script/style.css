@@ -1,0 +1,298 @@
+:root {
+  --pastel-green: rgb(193, 225, 193);
+  --pastel-grey: rgb(207, 207, 196);
+  --pastel-yellow: rgb(255, 250, 160);
+  --pastel-blue: rgb(167, 199, 231);
+  --pastel-brown: #ebe8e8;
+  --font: "ZCOOL KuaiLe", sans-serif;
+}
+
+/* div,
+p,
+h4 {
+  border-style: solid;
+} */
+
+.hidden {
+  display: none;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.inactive {
+  opacity: 10%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: url("../Assets/start-menu.png");
+  background-color: var(--pastel-brown);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  position: relative;
+  font-family: var(--font);
+  font-size: 25px;
+  color: black;
+  height: 45px;
+}
+
+.start-btn,
+.tutorial-btn {
+  top: 700px;
+}
+
+.start-btn,
+.play-btn {
+  background-color: var(--pastel-green);
+  border-color: var(--pastel-green);
+}
+
+.tutorial-btn {
+  background-color: var(--pastel-grey);
+  border-color: var(--pastel-grey);
+}
+
+.logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+}
+
+/* START GAME & TUTORIAL MODAL */
+.modal-body {
+  height: 320px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font);
+}
+
+.result-msg,
+.pause-msg {
+  text-align: center;
+}
+
+#startGameModal .btn,
+#tutorialModal .btn {
+  width: 120px;
+}
+
+#startGameModal p {
+  margin: 30px 0 0 0;
+  font-size: 20px;
+}
+
+#startGameModal input {
+  margin: 20px;
+}
+
+span, .dice-msg {
+  color: var(--pastel-blue);
+}
+
+#tutorialModal .modal-body {
+  height: 530px;
+}
+
+.power-dice-tuto {
+  display: grid;
+  grid-template-rows: repeat(1, 80px);
+  grid-template-columns: repeat(4, 80px);
+  align-items: center;
+}
+
+/* START GAME MESSAGE */
+.start-game-overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  text-align: center;
+}
+
+.start-game-msg {
+  position: relative;
+  top: 40%;
+  color: white;
+}
+
+.display-msg {
+  font-size: 80px;
+}
+
+/* GAME SCREEN */
+.header-row {
+  height: 100px;
+}
+
+.game-screen h3 {
+  margin: 10px 0 0 0;
+}
+
+#disp-p1,
+#disp-p2 {
+  margin: 0;
+  font-size: 20px;
+  text-align: start;
+}
+
+.status-bar {
+  display: flex;
+  position: relative;
+}
+
+.power-dice-stat {
+  display: grid;
+  grid-template-columns: repeat(2, 50px);
+  grid-template-rows: 50px;
+  justify-content: end;
+
+  position: absolute;
+  right: 0;
+  margin: 5px 0 0 0;
+}
+
+.power-dice-icon {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.round-msg {
+  font-size: 25px;
+}
+
+#resultModal .modal-body,
+#pauseModal .modal-body {
+  height: 100px;
+}
+
+.resume-btn {
+  background-color: var(--pastel-yellow);
+  border-color: var(--pastel-yellow);
+}
+
+#p1-tower,
+#p2-tower {
+  display: grid;
+  grid-template-rows: repeat(10, 50px);
+  grid-template-columns: repeat(5, 50px);
+
+  justify-content: center;
+  transform: rotate(180deg);
+}
+
+.timer {
+  height: 80px;
+  font-size: 50px;
+  width: 50%;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  margin: 0 auto;
+}
+
+.turn-counter {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.counter {
+  background-color: var(--pastel-grey);
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+}
+
+.power-turn {
+  background-color: var(--pastel-yellow);
+}
+
+.power-dice-deck {
+  height: 200px;
+  margin: 100px 0 0 0;
+  border-style: double;
+  border-width: 4px;
+
+  display: grid;
+  grid-template-rows: repeat(1, 100px);
+  grid-template-columns: repeat(4, 100px);
+  align-items: center;
+  justify-content: center;
+}
+
+#power-dice-btn {
+  grid-area: 2/2/4/-2;
+  border-width: 3px;
+  padding: 0;
+  background-color: var(--pastel-yellow);
+  border-color: black;
+}
+
+.dice-png {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#p1-cannon-dice,
+#p2-cannon-dice {
+  display: grid;
+  grid-template-rows: repeat(1, 130px);
+  grid-template-columns: 130px 30px 130px 50px 80px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.cannon-dice {
+  font-size: 40px;
+  margin: 0;
+}
+
+.brown-dice-png,
+.power-dice-png {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  justify-self: center;
+}
+
+#p1-cannon-btn,
+#p2-cannon-btn {
+  background-color: var(--pastel-green);
+  color: black;
+  border-color: black;
+
+  border-radius: 50%;
+  border-width: 3px;
+  width: 100px;
+  height: 100px;
+
+  margin: 20px 0 0 0;
+}
+
+.chosen {
+  border-style: solid;
+  border-color: var(--pastel-yellow);
+  border-radius: 15px;
+  border-width: 5px;
+}
